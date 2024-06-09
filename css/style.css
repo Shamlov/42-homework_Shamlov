@@ -1,0 +1,125 @@
+/*null*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside, section {
+  display: block;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+html, body {
+  color: #000;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/*--------------------*/
+.wrapper {
+  width: 600px;
+  height: 100vh;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.link-block {
+  background-color: rgb(239, 234, 155);
+  padding: 20px;
+}
+.link-block li {
+  margin: 5px;
+}
+.link-block .lineOn {
+  border-bottom: 2px solid red;
+}
+
+.nested-directories {
+  padding: 40px;
+  background-color: rgb(207, 239, 191);
+}
+.nested-directories .subdirectory {
+  margin-left: 30px;
+  color: darkred;
+}
+.nested-directories .collapse {
+  border-bottom: 2px solid rgb(37, 4, 255);
+}
+.nested-directories .collapse * {
+  display: none;
+}
+
+.books-block {
+  padding: 40px;
+  background-color: rgb(189, 203, 216);
+}
+.books-block li {
+  cursor: pointer;
+}
+.books-block .allocation {
+  background-color: orange;
+}
+
+table {
+  padding: 20px;
+  background-color: rgb(207, 239, 191);
+}
+table th, table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid black;
+}/*# sourceMappingURL=style.css.map */
