@@ -43,32 +43,43 @@ elUl.addEventListener('click', changeClass )
 была зажата клавиша Shift, то к выделению добавляются все 
 элементы в промежутке от предыдущего кликнутого до текущего.
 */
+const cnt = document.querySelector('.books-block')
+const srts = document.querySelectorAll('.books-block li')
+let previousEl
+cnt.addEventListener ('click', (e) => {
+    console.log(e)
+    if(e.ctrlKey) {
+        // e.target.classList.toggle('allocation')   
+        if(e.target.classList.contains) {
+            e.target.classList.remove('allocation')
+        } else {
+            e.target.classList.add('allocation')
+            previousEl = e.target // сохраним предыдующий кликнутый
+        }
+    } else if(e.shiftKey) {
+        document.onselectstart = () => {
+            return false;
+        }
+        e.target.classList.add('allocation')
+        previousEl = e.target  // сохраним предыдующий кликнутый
 
-let booksBlock = document.querySelector('.books-block')
-let liAll = booksBlock.querySelectorAll('li')   // для интереса найдем через booksBlock
-function selectionClass(e) {
-    if(!e.target.closest('li')) {
-        return
+    } else {
+        srts.forEach((el)=>{
+            if(el !== e.target ) {
+                el.classList.remove('allocation')
+            } else {
+                e.target.classList.add('allocation')
+                previousEl = e.target // сохраним предыдующий кликнутый
+            }
+        })
     }
-    liAll.forEach(function(el){
-        el.classList.remove('allocation')
-    })
-    e.target.classList.add('allocation')
-}
+})
 
 
-// !!!!!!!! Сдаюсь. нужна помощь по выполнению второй части!!!!!!!!!!!!!!!!!!!
 
-function selectionClassKey(e) {
-    e.preventDefault()
-    if(e.code == 'ControlLeft' || e.code == 'ControlRight') {
-        console.log(23523)
-    }
-    // booksBlock.addEventListener('click', selectionClassMod)
-}
 
-booksBlock.addEventListener('click', selectionClass)
-document.addEventListener('keydown', selectionClassKey)
+
+
 
 
 /////////////////////////////////////////////////////////
